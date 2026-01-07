@@ -555,6 +555,7 @@ class _LivenessDetectionScreenState extends State<LivenessDetectionView> {
             const Duration(milliseconds: 500),
             () => _takePicture(),
           ),
+          onBack: widget.config.onBack,
         ),
       ],
     );
