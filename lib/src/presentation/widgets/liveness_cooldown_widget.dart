@@ -136,7 +136,7 @@ class _LivenessCooldownWidgetState extends State<LivenessCooldownWidget> with Wi
               ),
               const SizedBox(height: 24),
               Text(
-                'Too Many Failed Attempts',
+                'Quá nhiều lần thất bại',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -146,7 +146,7 @@ class _LivenessCooldownWidgetState extends State<LivenessCooldownWidget> with Wi
               ),
               const SizedBox(height: 16),
               Text(
-                'You have failed liveness verification ${widget.maxFailedAttempts} times.\nPlease wait before trying again.',
+                'Bạn đã xác thực thất bại ${widget.maxFailedAttempts} lần.\nVui lòng chờ trước khi thử lại.',
                 style: TextStyle(
                   fontSize: 16,
                   color: widget.isDarkMode ? Colors.white70 : Colors.black54,
@@ -190,7 +190,7 @@ class _LivenessCooldownWidgetState extends State<LivenessCooldownWidget> with Wi
                   foregroundColor: widget.isDarkMode ? Colors.white : Colors.black,
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                 ),
-                child: const Text('Back'),
+                child: const Text('Quay lại'),
               ),
             ],
           ),

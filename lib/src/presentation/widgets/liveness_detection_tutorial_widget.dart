@@ -37,7 +37,7 @@ class _LivenessDetectionTutorialScreenState
               height: 16,
             ),
             Text(
-              'Liveness Detection - Tutorial',
+              'Hướng dẫn',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
@@ -76,13 +76,13 @@ class _LivenessDetectionTutorialScreenState
                               widget.isDarkMode ? Colors.white : Colors.black),
                     ),
                     subtitle: Text(
-                      "Make sure you are in an area that has sufficient lighting and that your ears are not covered by anything",
+                      "Hãy đảm bảo bạn đang ở trong khu vực có đủ ánh sáng và tai của bạn không bị bất cứ thứ gì che phủ.",
                       style: TextStyle(
                           color:
                               widget.isDarkMode ? Colors.white : Colors.black),
                     ),
                     title: Text(
-                      "Sufficient Lighting",
+                      "Ánh sáng đầy đủ",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -100,13 +100,13 @@ class _LivenessDetectionTutorialScreenState
                               widget.isDarkMode ? Colors.white : Colors.black),
                     ),
                     subtitle: Text(
-                      "Hold the phone at eye level and look straight at the camera",
+                      "Giữ điện thoại ngang tầm mắt và nhìn thẳng vào camera.",
                       style: TextStyle(
                           color:
                               widget.isDarkMode ? Colors.white : Colors.black),
                     ),
                     title: Text(
-                      "Straight Ahead View",
+                      "Nhìn thẳng phía trước",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -124,13 +124,13 @@ class _LivenessDetectionTutorialScreenState
                               widget.isDarkMode ? Colors.white : Colors.black),
                     ),
                     subtitle: Text(
-                      "The time limit given for the liveness detection system verification process is ${widget.duration ?? 45} seconds",
+                      "Thời hạn quy định cho quá trình xác minh hệ thống phát hiện sự sống là ${widget.duration ?? 45} giây",
                       style: TextStyle(
                           color:
                               widget.isDarkMode ? Colors.white : Colors.black),
                     ),
                     title: Text(
-                      "Time Limit Verification",
+                      "Giới hạn thời gian",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -157,7 +157,7 @@ class _LivenessDetectionTutorialScreenState
               icon: const Icon(Icons.camera_alt_outlined),
               onPressed: () => widget.onStartTap(),
               label: const Text(
-                "Start the Liveness Detection System",
+                "Bắt đầu kiểm tra",
               ),
             ),
             const SizedBox(
@@ -176,7 +176,7 @@ class _LivenessDetectionTutorialScreenState
                   width: 10,
                 ),
                 Text(
-                  'Package Version: 1.1.0',
+                  'Proudly Made by UNIT Corp',
                   style: TextStyle(color: Colors.grey),
                 )
               ],

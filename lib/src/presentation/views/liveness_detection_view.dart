@@ -440,8 +440,8 @@ class _LivenessDetectionScreenState extends State<LivenessDetectionView> {
       final snackBar = SnackBar(
         content: Text(
           imgToReturn == null
-              ? 'Verification of liveness detection failed, please try again. (Exceeds time limit ${widget.config.durationLivenessVerify ?? 45} second.)'
-              : 'Verification of liveness detection success!',
+              ? 'Xác thực không thành công, vui lòng thử lại. (Vượt quá giới hạn thời gian ${widget.config.durationLivenessVerify ?? 45} giây.))'
+              : 'Xác thực sự sống thành công!',
         ),
       );
       if (!mounted) return;
