@@ -13,6 +13,7 @@ class LivenessDetectionStepOverlayWidget extends StatefulWidget {
   final bool isDarkMode;
   final bool showDurationUiText;
   final int? duration;
+  final Function()? onBack;
 
   const LivenessDetectionStepOverlayWidget({
     super.key,
@@ -25,6 +26,7 @@ class LivenessDetectionStepOverlayWidget extends StatefulWidget {
     this.isDarkMode = true,
     this.showDurationUiText = false,
     this.duration,
+    this.onBack
   });
 
   @override
@@ -195,13 +197,19 @@ class LivenessDetectionStepOverlayWidgetState
         child: Stack(
           children: [
             GestureDetector(
-              onTap: () => Navigator.pop(context),
+              onTap: () {
+                if (widget.onBack != null) {
+                  widget.onBack!();
+                } else {
+                  Navigator.of(context).pop();
+                }
+              },
               child: widget.showCurrentStep
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Back',
+                          'Hủy',
                           style: TextStyle(
                               color: widget.isDarkMode
                                   ? Colors.white
