@@ -2,7 +2,6 @@
 import 'package:flutter_liveness_detection_randomized_plugin/index.dart';
 import 'package:flutter_liveness_detection_randomized_plugin/src/core/constants/liveness_detection_step_constant.dart';
 import 'package:collection/collection.dart';
-import 'package:screen_brightness/screen_brightness.dart';
 import 'package:image/image.dart' as img;
 import 'package:path_provider/path_provider.dart';
 
@@ -33,25 +32,6 @@ class _LivenessDetectionScreenState extends State<LivenessDetectionView> {
   bool _isProcessingStep = false;
   bool _faceDetectedState = false;
   List<LivenessDetectionStepItem> _shuffledSteps = [];
-
-  // Brightness Screen
-  Future<void> setApplicationBrightness(double brightness) async {
-    try {
-      await ScreenBrightness.instance.setApplicationScreenBrightness(
-        brightness,
-      );
-    } catch (e) {
-      throw 'Failed to set application brightness';
-    }
-  }
-
-  Future<void> resetApplicationBrightness() async {
-    try {
-      await ScreenBrightness.instance.resetApplicationScreenBrightness();
-    } catch (e) {
-      throw 'Failed to reset application brightness';
-    }
-  }
 
   // Steps related variables
   late final List<LivenessDetectionStepItem> steps;
@@ -211,10 +191,7 @@ class _LivenessDetectionScreenState extends State<LivenessDetectionView> {
     _timerToDetectFace?.cancel();
     _timerToDetectFace = null;
     _cameraController?.dispose();
-    
-    if (widget.config.isEnableMaxBrightness) {
-      resetApplicationBrightness();
-    }
+
     super.dispose();
   }
 
@@ -223,10 +200,7 @@ class _LivenessDetectionScreenState extends State<LivenessDetectionView> {
     
     // Initialize and shuffle steps fresh each time
     _initializeShuffledSteps();
-    
-    if (widget.config.isEnableMaxBrightness) {
-      setApplicationBrightness(1.0);
-    }
+
   }
 
   void _postFrameCallBack() async {
