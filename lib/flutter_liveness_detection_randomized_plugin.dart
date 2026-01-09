@@ -27,6 +27,7 @@ class FlutterLivenessDetectionRandomizedPlugin {
               cooldownState: cooldownState,
               isDarkMode: config.isDarkMode,
               maxFailedAttempts: config.maxFailedAttempts,
+              onCooldownComplete: config.onBack,
             ),
           ),
         );

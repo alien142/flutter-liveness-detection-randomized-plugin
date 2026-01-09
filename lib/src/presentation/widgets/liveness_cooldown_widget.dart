@@ -184,7 +184,13 @@ class _LivenessCooldownWidgetState extends State<LivenessCooldownWidget> with Wi
               ),
               const SizedBox(height: 32),
               ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(),
+                onPressed: () {
+                  if (widget.onCooldownComplete != null) {
+                    widget.onCooldownComplete!();
+                  } else {
+                    Navigator.of(context).pop();
+                  }
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: widget.isDarkMode ? Colors.grey[800] : Colors.grey[300],
                   foregroundColor: widget.isDarkMode ? Colors.white : Colors.black,
